@@ -23,7 +23,7 @@ const sidebars: SidebarsConfig = {
         'about-company-profile',
         'about-vision-mission',
         'about-core-services',
-        'about-objectives',
+        'about-strategic-objectives',
         'objectives-diagram',
       ],
     },
@@ -33,7 +33,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'implementation-schedule',
         'implementation-phases',
-        'implementation-activities',
+        'implementation-key-activities',
         'implementation-deliverables',
       ],
     },
@@ -66,8 +66,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Strategy',
       items: [
-        'strategy-pillars',
-        'strategy-expected-results',
+        'strategy-results',
       ],
     },
     {
@@ -76,23 +75,22 @@ const sidebars: SidebarsConfig = {
       items: [
         'hr-staffing',
         'hr-organogram',
-        'hr-motivation',
+        'hr-motivation-plan',
       ],
     },
     {
       type: 'category',
       label: 'Budget & Risk',
       items: [
-        'budget-fixed-capital',
-        'budget-operational',
-        'risk-management-plan',
+        'budget',
+        'risk-management',
       ],
     },
     {
       type: 'category',
       label: 'Sustainability',
       items: [
-        'sustainability-strategy',
+        'sustainability',
       ],
     },
     {
