@@ -57,6 +57,19 @@ const config: Config = {
     ],
   ],
 
+
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        language: ["en"],
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+      },
+    ],
+  ],
+
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
@@ -71,23 +84,8 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Documentation',
-        },
-        {to: '/docs/home', label: 'Start Here', position: 'left'},
-        {
-          href: 'https://mucunguzi256.github.io/ubunifu_SACCO/source.pdf',
-          label: 'Reference PDF',
-          position: 'left',
-        },
-        {
-          href: 'https://github.com/Mucunguzi256/ubunifu_SACCO',
-          label: 'GitHub',
-          position: 'right',
-        },
+        {to: '/docs', label: 'Docs', position: 'left'},
+        {href: 'https://github.com/Mucunguzi256/ubunifu_SACCO', label: 'Repo', position: 'right'},
       ],
     },
     footer: {
@@ -96,40 +94,19 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            {
-              label: 'Home',
-              to: '/docs/home',
-            },
-            {
-              label: 'Reference PDF',
-              href: 'https://mucunguzi256.github.io/ubunifu_SACCO/source.pdf',
-            },
+            {label: 'Docs', to: '/docs/home'},
           ],
         },
         {
-          title: 'Project',
+          title: 'Repo',
           items: [
-            {
-              label: 'Repository',
-              href: 'https://github.com/Mucunguzi256/ubunifu_SACCO',
-            },
-            {label: 'Issues', href: 'https://github.com/Mucunguzi256/ubunifu_SACCO/issues'},
-          ],
-        },
-        {
-          title: 'Navigation',
-          items: [
-            {label: 'All Docs', to: '/docs/home'},
-            {label: 'Methodology', to: '/docs/methodology-feasibility-study'},
+            {label: 'Repo', href: 'https://github.com/Mucunguzi256/ubunifu_SACCO'},
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Ubunifu SACCO. Built with Docusaurus.`,
     },
-    prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
-    },
+    theme: prismThemes.github,
+    darkTheme: prismThemes.dracula,
   } satisfies Preset.ThemeConfig,
 };
 

@@ -50,24 +50,7 @@ export default function Home(): ReactNode {
       title={siteConfig.title}
       description="Ubunifu SACCO documentation for architecture, implementation, budget, and strategic planning.">
       <HomepageHeader />
-      <main>
-        <section className="container ubn-section">
-          <div className="ubn-cards">
-            <article className="ubn-card">
-              <h3>Fast Navigation</h3>
-              <p>Structured sidebars and grouped documentation help teams move quickly between sections.</p>
-            </article>
-            <article className="ubn-card">
-              <h3>Consistency First</h3>
-              <p>Source content is preserved from the original repository for document integrity.</p>
-            </article>
-            <article className="ubn-card">
-              <h3>Production Ready</h3>
-              <p>Built on Docusaurus for a stable, searchable, and maintainable documentation experience.</p>
-            </article>
-          </div>
-        </section>
-      </main>
+      {/* Cards/features section removed as requested */}
     </Layout>
   );
 }
