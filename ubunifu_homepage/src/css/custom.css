@@ -1,0 +1,317 @@
+/* src/css/custom.css
+   Ubunifu SACCO — Docusaurus global theme overrides
+   Palette: Indigo Crane — deep indigo + electric violet + crane blue + Uganda gold + Uganda red
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* ── Token overrides ───────────────────────────────────────────────── */
+:root {
+  --ifm-color-primary: #4F2DD4;
+  --ifm-color-primary-dark: #4426BF;
+  --ifm-color-primary-darker: #3D22AD;
+  --ifm-color-primary-darkest: #30198E;
+  --ifm-color-primary-light: #6040E8;
+  --ifm-color-primary-lighter: #7055EE;
+  --ifm-color-primary-lightest: #9175F4;
+
+  --ifm-font-family-base: 'Outfit', system-ui, sans-serif;
+  --ifm-font-family-monospace: 'DM Mono', 'Fira Code', monospace;
+  --ifm-heading-font-family: 'DM Serif Display', Georgia, serif;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.75;
+
+  --ifm-background-color: #07061A;
+  --ifm-background-surface-color: #0D0B27;
+  --ifm-navbar-background-color: rgba(7, 6, 26, 0.9);
+  --ifm-navbar-shadow: 0 1px 0 0 rgba(79, 45, 212, 0.2);
+  --ifm-footer-background-color: #060517;
+
+  --ifm-color-content: #EBE8FF;
+  --ifm-color-content-secondary: #8B82BE;
+  --ifm-link-color: #00C4FF;
+  --ifm-link-hover-color: #33CEFF;
+
+  --ifm-code-font-size: 0.88rem;
+  --ifm-code-background: rgba(79, 45, 212, 0.12);
+  --ifm-code-border-radius: 3px;
+  --ifm-code-padding-horizontal: 6px;
+  --ifm-code-padding-vertical: 2px;
+
+  --ifm-sidebar-width: 280px;
+  --ifm-toc-border-color: rgba(79, 45, 212, 0.18);
+
+  /* Custom tokens */
+  --ub-gold: #FCDC04;
+  --ub-red: #D21034;
+  --ub-cyan: #00C4FF;
+  --ub-violet: #4F2DD4;
+  --ub-mono: 'DM Mono', monospace;
+}
+
+[data-theme='dark'] {
+  --ifm-background-color: #07061A;
+  --ifm-background-surface-color: #0D0B27;
+  --ifm-color-content: #EBE8FF;
+}
+
+/* ── Body & typography ─────────────────────────────────────────────── */
+body {
+  background: #07061A;
+  color: #EBE8FF;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Docs page headings */
+.markdown h1 { font-size: 2.2rem; margin-bottom: 0.5em; }
+.markdown h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid rgba(79, 45, 212, 0.18);
+}
+.markdown h3 { font-size: 1.15rem; }
+
+/* ── Navbar ────────────────────────────────────────────────────────── */
+.navbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(79, 45, 212, 0.2) !important;
+}
+.navbar__title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.1rem;
+  color: #EBE8FF;
+}
+.navbar__link {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #8B82BE;
+  transition: color 0.15s;
+}
+.navbar__link:hover,
+.navbar__link--active {
+  color: #EBE8FF;
+}
+.navbar__logo {
+  height: 28px;
+}
+
+/* ── Sidebar ───────────────────────────────────────────────────────── */
+.theme-doc-sidebar-container {
+  border-right: 1px solid rgba(79, 45, 212, 0.15) !important;
+  background: #0A0820 !important;
+}
+.menu__link {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.83rem;
+  color: #8B82BE;
+  border-radius: 3px;
+  transition: all 0.15s;
+}
+.menu__link:hover {
+  background: rgba(79, 45, 212, 0.12);
+  color: #EBE8FF;
+}
+.menu__link--active {
+  background: rgba(79, 45, 212, 0.2) !important;
+  color: #EBE8FF !important;
+  border-left: 2px solid #4F2DD4;
+}
+.menu__caret::before {
+  border-color: #8B82BE;
+}
+.menu__list-item-collapsible:hover {
+  background: rgba(79, 45, 212, 0.08);
+}
+
+/* Sidebar category labels */
+.menu__list .menu__list-item > .menu__link--sublist {
+  font-size: 0.7rem;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(139, 130, 190, 0.6);
+}
+
+/* ── Docs article ──────────────────────────────────────────────────── */
+article {
+  padding: 2rem 0;
+}
+.markdown {
+  --ifm-heading-color: #EBE8FF;
+}
+.markdown p {
+  color: #C0BAE8;
+  line-height: 1.8;
+}
+.markdown strong {
+  color: #EBE8FF;
+  font-weight: 600;
+}
+
+/* Tables */
+.markdown table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+  font-size: 0.88rem;
+}
+.markdown th {
+  background: rgba(79, 45, 212, 0.15);
+  color: #EBE8FF;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  border: 1px solid rgba(79, 45, 212, 0.25);
+  font-weight: 500;
+}
+.markdown td {
+  padding: 10px 14px;
+  border: 1px solid rgba(79, 45, 212, 0.12);
+  color: #C0BAE8;
+  vertical-align: top;
+}
+.markdown tr:nth-child(even) td {
+  background: rgba(79, 45, 212, 0.04);
+}
+
+/* Code blocks */
+.prism-code {
+  background: #0A0820 !important;
+  border: 1px solid rgba(79, 45, 212, 0.2) !important;
+  border-radius: 4px !important;
+}
+.codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module {
+  background: #0F0B2A !important;
+  border-bottom: 1px solid rgba(79, 45, 212, 0.2) !important;
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.72rem !important;
+  color: #8B82BE !important;
+}
+
+/* Admonitions */
+.alert {
+  border-radius: 3px !important;
+  border-left-width: 3px !important;
+}
+.alert--info {
+  background: rgba(0, 196, 255, 0.06) !important;
+  border-color: #00C4FF !important;
+}
+.alert--warning {
+  background: rgba(252, 220, 4, 0.06) !important;
+  border-color: #FCDC04 !important;
+}
+.alert--danger {
+  background: rgba(210, 16, 52, 0.06) !important;
+  border-color: #D21034 !important;
+}
+.alert--success {
+  background: rgba(40, 200, 80, 0.06) !important;
+  border-color: #28C840 !important;
+}
+
+/* ── Mermaid diagrams ──────────────────────────────────────────────── */
+.mermaid {
+  background: rgba(13, 11, 39, 0.6) !important;
+  border: 1px solid rgba(79, 45, 212, 0.18) !important;
+  border-radius: 4px !important;
+  padding: 1.5rem !important;
+}
+
+/* ── Pagination ────────────────────────────────────────────────────── */
+.pagination-nav__link {
+  background: rgba(79, 45, 212, 0.08);
+  border: 1px solid rgba(79, 45, 212, 0.18);
+  border-radius: 3px;
+  transition: all 0.18s;
+}
+.pagination-nav__link:hover {
+  background: rgba(79, 45, 212, 0.18);
+  border-color: var(--ub-violet);
+}
+.pagination-nav__sublabel {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8B82BE;
+}
+.pagination-nav__label {
+  color: #EBE8FF;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1rem;
+}
+
+/* ── TOC ───────────────────────────────────────────────────────────── */
+.table-of-contents__link {
+  font-size: 0.78rem;
+  color: #8B82BE;
+  transition: color 0.15s;
+}
+.table-of-contents__link:hover,
+.table-of-contents__link--active {
+  color: var(--ub-cyan);
+}
+
+/* ── Footer ────────────────────────────────────────────────────────── */
+.footer {
+  background: #060517 !important;
+  border-top: 1px solid rgba(79, 45, 212, 0.15);
+}
+.footer__title {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8B82BE;
+}
+.footer__link-item {
+  font-size: 0.85rem;
+  color: #8B82BE;
+  transition: color 0.15s;
+}
+.footer__link-item:hover {
+  color: #EBE8FF;
+  text-decoration: none;
+}
+.footer__copyright {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: rgba(139, 130, 190, 0.5);
+  letter-spacing: 0.04em;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #07061A;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(79, 45, 212, 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(79, 45, 212, 0.7);
+}
+
+/* ── Selection ─────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(252, 220, 4, 0.25);
+  color: #EBE8FF;
+}
+
+/* ── "No home banner" — remove default Docusaurus hero if present ──── */
+.hero--primary { display: none; }

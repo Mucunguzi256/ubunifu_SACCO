@@ -25,7 +25,7 @@ const config: Config = {
   organizationName: 'Mucunguzi256',
   projectName: 'ubunifu_SACCO',
 
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -37,7 +37,6 @@ const config: Config = {
 
   markdown: {
     format: 'md',
-    mermaid: true,
   },
 
   presets: [
@@ -57,23 +56,10 @@ const config: Config = {
     ],
   ],
 
-
-  themes: [
-    [
-      require.resolve("@easyops-cn/docusaurus-search-local"),
-      {
-        hashed: true,
-        language: ["en"],
-        highlightSearchTermsOnTargetPage: true,
-        explicitSearchResultPath: true,
-      },
-    ],
-  ],
-
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
-      defaultMode: 'dark',
+      defaultMode: 'light',
       disableSwitch: false,
       respectPrefersColorScheme: false,
     },
@@ -84,9 +70,23 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        { to: '/docs', label: 'Documentation', position: 'left' },
-        { to: '/', label: 'Start Here', position: 'left' },
-        { href: 'https://github.com/Mucunguzi256/ubunifu_SACCO', label: 'GitHub', position: 'right' },
+        {
+          type: 'docSidebar',
+          sidebarId: 'tutorialSidebar',
+          position: 'left',
+          label: 'Documentation',
+        },
+        {to: '/docs/home', label: 'Start Here', position: 'left'},
+        {
+          href: 'https://mucunguzi256.github.io/ubunifu_SACCO/source.pdf',
+          label: 'Reference PDF',
+          position: 'left',
+        },
+        {
+          href: 'https://github.com/Mucunguzi256/ubunifu_SACCO',
+          label: 'GitHub',
+          position: 'right',
+        },
       ],
     },
     footer: {
@@ -95,29 +95,39 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            { label: 'Home', to: '/docs/home' },
+            {
+              label: 'Home',
+              to: '/docs/home',
+            },
+            {
+              label: 'Reference PDF',
+              href: 'https://mucunguzi256.github.io/ubunifu_SACCO/source.pdf',
+            },
           ],
         },
         {
           title: 'Project',
           items: [
-            { label: 'Repository', href: 'https://github.com/Mucunguzi256/ubunifu_SACCO' },
-            { label: 'Issues', href: 'https://github.com/Mucunguzi256/ubunifu_SACCO/issues' },
+            {
+              label: 'Repository',
+              href: 'https://github.com/Mucunguzi256/ubunifu_SACCO',
+            },
+            {label: 'Issues', href: 'https://github.com/Mucunguzi256/ubunifu_SACCO/issues'},
           ],
         },
         {
           title: 'Navigation',
           items: [
-            { label: 'All Docs', to: '/docs/home' },
-            { label: 'Methodology', to: '/docs/methodology-feasibility-study' },
+            {label: 'All Docs', to: '/docs/home'},
+            {label: 'Methodology', to: '/docs/methodology-feasibility-study'},
           ],
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Ubunifu SACCO. Built with Docusaurus.`,
     },
     prism: {
-      theme: prismThemes.vsDark,
-      darkTheme: prismThemes.vsDark,
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
 };

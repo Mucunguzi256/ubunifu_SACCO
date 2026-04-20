@@ -1,0 +1,20 @@
+/* src/css/navbar-join.css
+   Add to custom.css or import in it.
+   Styles the "Join the SACCO" navbar button distinctly.
+*/
+
+/* Join CTA in navbar */
+.navbar-join-btn {
+  background: var(--ifm-color-primary) !important;
+  color: #fff !important;
+  padding: 6px 16px !important;
+  border-radius: 3px !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  transition: background 0.2s !important;
+  margin-left: 4px;
+}
+.navbar-join-btn:hover {
+  background: #6040E8 !important;
+  color: #fff !important;
+}

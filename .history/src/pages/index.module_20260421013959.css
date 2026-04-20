@@ -1,0 +1,60 @@
+/* src/pages/index.module.css — Ubunifu SACCO homepage */
+/* Indigo Crane palette */
+:root {
+  --ub-bg: #07061A;
+  --ub-surface: #0D0B27;
+  --ub-surface2: #161336;
+  --ub-violet: #4F2DD4;
+  --ub-violet-dim: rgba(79, 45, 212, 0.25);
+  --ub-cyan: #00C4FF;
+  --ub-gold: #FCDC04;
+  --ub-red: #D21034;
+  --ub-text: #EBE8FF;
+  --ub-muted: #8B82BE;
+  --ub-border: rgba(79, 45, 212, 0.2);
+  --ub-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ── TICKER ───────────────────────────────────────────────────────── */
+.ticker {
+  background: var(--ub-surface);
+  border-bottom: 1px solid var(--ub-border);
+  height: 36px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.tickerInner {
+  display: flex;
+  white-space: nowrap;
+  animation: tickerScroll 45s linear infinite;
+}
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.tickerItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 2.5rem;
+  font-family: var(--ub-mono);
+  font-size: 0.7rem;
+  color: var(--ub-muted);
+  letter-spacing: 0.04em;
+}
+.tickerDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ub-gold);
+  flex-shrink: 0;
+}
+
+/* ── HERO ─────────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--ub-bg);
+  min-height: 88vh;
+  display: grid;
